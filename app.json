@@ -12,8 +12,11 @@
       "backgroundColor": "#161622"
     },
     "androidNavigationBar": {
-      "visible": "immersive",
-      "backgroundColor": "#161622"
+      "behavior": "hide",
+      "backgroundColor": "#161622",
+      "style": "light",
+      "translucent": true,
+      "dividerColor": "#FFFFFF"
     },
     "splash": {
       "image": "./assets/images/splash.png",
@@ -21,9 +24,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "package": "com.kinggrey.aora",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.kinggrey.aora",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
