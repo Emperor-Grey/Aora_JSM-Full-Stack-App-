@@ -7,7 +7,7 @@ import CustomButton from '../../components/CustomButton';
 import FormField from '../../components/FormField';
 import { images } from '../../constants';
 import { useGlobalContext } from '../../context/GlobalProvider';
-import { getCurrentUser, signIn } from '../../lib/appwrite';
+import { getCurrentUser, signIn, signOut } from '../../lib/appwrite';
 
 const SignIn = () => {
   const [form, setForm] = useState({
@@ -17,10 +17,13 @@ const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { setUser, setIsLoggedIn } = useGlobalContext();
 
+  const deleteSession = async () => {
+    await signOut();
+  };
+
   const submit = async () => {
     if (!form.email || !form.password) {
       Alert.alert('Error', 'Please fill all the fields');
-      return;
     }
 
     setIsSubmitting(true);
@@ -75,6 +78,12 @@ const SignIn = () => {
           <CustomButton
             title={'Sign In'}
             handlePress={submit}
+            containerStyles={'mt-8'}
+            isLoading={isSubmitting}
+          />
+          <CustomButton
+            title={'Delete Session'}
+            handlePress={deleteSession}
             containerStyles={'mt-8'}
             isLoading={isSubmitting}
           />
