@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FlatList, Image, RefreshControl, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
 import EmptyState from '../../components/EmptyState';
 import SearchInput from '../../components/SearchInput';
 import Trending from '../../components/Trending';
